@@ -4,9 +4,9 @@ import (
 	"time"
 )
 
-type Once func() error
+type Func func() error
 
-func (fn Once) Every(interval time.Duration) error {
+func (fn Func) Every(interval time.Duration) error {
 	ticker := time.NewTicker(interval)
 
 	defer ticker.Stop()
